@@ -1,0 +1,90 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Navegación</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Menú de Navegación -->
+    <header class="navbar">
+        <div class="navbar-logo">
+            <img src="logo.png" alt="Logo" />
+        </div>
+        
+        <div class="navbar-search">
+            <input type="text" placeholder="Busca más de 10,000 productos" />
+            <button type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        
+        <nav class="navbar-links">
+            <!-- Menú desplegable para "Categorías" -->
+            <div class="dropdown">
+                <a href="#" class="navbar-link dropbtn"><i class="fas fa-th-large"></i> Categorías</a>
+                <div class="dropdown-content">
+                    <a href="ofertas.html"><i class="fas fa-tags"></i> Ofertas</a>
+                    <a href="salud.html"><i class="fas fa-heartbeat"></i> Salud</a>
+                    <a href="celulares.html"><i class="fas fa-mobile-alt"></i> Celulares</a>
+                    <a href="#"><i class="fas fa-tablet-alt"></i> Tablets</a>
+                    <a href="#"><i class="fas fa-headphones-alt"></i> Audio y Video</a>
+                    <a href="#"><i class="fas fa-home"></i> Hogar</a>
+                    <a href="#"><i class="fas fa-briefcase"></i> Oficina</a>
+                    <a href="#"><i class="fas fa-gamepad"></i> Consolas</a>
+                    <a href="#"><i class="fas fa-clock"></i> Relojes, Smartwatches y Smartbands</a>
+                    <a href="#"><i class="fas fa-ellipsis-h"></i> Varios</a>
+                </div>
+            </div>
+            
+            <a href="contactos.html" class="navbar-link"><i class="fas fa-headset"></i> Contactos</a>
+            <a href="#" class="navbar-link"><i class="fas fa-shopping-cart"></i> Carrito</a>
+            <a href="index.html" class="navbar-icon"><i class="fas fa-user"></i></a>
+            <a href="#" class="navbar-icon"><i class="fas fa-shopping-bag"></i></a>
+        </nav>
+    </header>
+    <br>  <br> <br> <br> <br> <br> <br>
+    <!-- Sección de Contactos -->
+    <section id="contactos" class="contact-section">
+        <h1>Contactos</h1>
+        <br>
+        
+        <!-- Bloque de Tiendas -->
+        <div class="contact-box">
+            <h2 class="section-title">Tiendas</h2> <br>
+            <p>Mira tu tienda más cerca y visítenos para ver todas nuestras ofertas.</p> <br>
+            <button class="contact-button">MIRAR TODAS LAS TIENDAS</button> <br>
+            <i class="fas fa-store fa-3x"></i>
+        </div>
+        
+        <!-- Bloque de Redes Sociales -->
+        <div class="contact-box">
+            <h2 class="section-title social-title">Redes Sociales</h2><br>
+            <div class="social-icons">
+                <div class="social-icon">
+                    <i class="fab fa-facebook fa-3x"></i>
+                    <p>Facebook</p>
+                </div>
+                <div class="social-icon">
+                    <i class="fab fa-instagram fa-3x"></i>
+                    <p>Instagram</p>
+                </div>
+                <div class="social-icon">
+                    <i class="fab fa-whatsapp fa-3x"></i>
+                    <p>WhatsApp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer>
+        <p>&copy; 2023 TechStore. Todos los derechos reservados.</p>
+        <p><a href="#">Términos de Servicio</a> | <a href="#">Política de Privacidad</a></p>
+    </footer>
+
+</body>
+</html>

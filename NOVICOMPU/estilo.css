@@ -1,0 +1,590 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    margin-top: 2.5rem; /* Ajusta este valor para alinear con la .top-bar */
+    width: 1200px;
+    position: fixed; /* Fija el menú */
+    top: 0; /* Posición en la parte superior */
+    z-index: 999; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+
+/* Logo */
+.navbar-logo img {
+    width: 200px;
+}
+
+/* Search Bar */
+.navbar-search {
+    flex-grow: 0.5;
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+    background-color: #eaeaea;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.navbar-search input[type="text"] {
+    border: none;
+    padding: 10px 15px;
+    flex-grow: 1;
+    font-size: 1rem;
+    color: #666;
+    background-color: transparent;
+    outline: none;
+}
+
+.navbar-search button {
+    background-color: #8bc34a;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-search button i {
+    color: white;
+}
+
+/* Navbar Links */
+.navbar-links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-link {
+    margin-left: 15px;
+    font-size: 1rem;
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.navbar-link i {
+    color: #ff4081;
+    font-size: 1.1rem;
+}
+
+
+
+/* Navbar Icons */
+.navbar-icon {
+    margin-left: 15px;
+    font-size: 1.2rem;
+    color: #333;
+    text-decoration: none;
+}
+
+.navbar-icon i {
+    color: #333;
+}
+
+.navbar-icon:hover i {
+    color: #ff4081;
+}
+
+/* Estilos básicos del menú */
+.navbar-links {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar-link, .dropbtn {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a i {
+    margin-right: 8px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Mostrar el submenú al pasar el ratón */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Banner */
+/* Contenedor del banner */
+.banner-container {
+    width: 70%; /* Ancho ajustable según la necesidad */
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+    padding-top: 30%; /* Ajuste basado en relación de aspecto 16:9 */
+    height: 0; /* No altura fija, depende del padding-top */
+}
+
+/* Contenedor de las imágenes deslizantes */
+.banner-slider {
+    display: flex;
+    width: calc(100% * 2); /* Ajusta según el número de imágenes */
+    height: 100%; /* Asegura que ocupe el espacio del contenedor */
+    animation: slide 3s infinite;
+    position: absolute; /* Absoluto para ubicarse sobre el padding-top */
+    top: 0;
+    left: 0;
+}
+
+/* Imágenes individuales */
+.banner-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
+}
+
+
+/* Controles de navegación */
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    user-select: none;
+}
+
+.nav.prev {
+    left: 10px;
+}
+
+.nav.next {
+    right: 10px;
+}
+
+/* Indicadores */
+.indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.indicators .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.indicators .dot.active {
+    background-color: #717171;
+}
+
+
+/* Productos */
+.productos {
+    padding: 2rem;
+    text-align: center;
+}
+
+.producto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Reducir el ancho mínimo de cada columna */
+    gap: 1rem;
+}
+
+.producto {
+    border: 1px solid #ddd;
+    padding: 0.8rem; /* Reducir el padding para hacer el contenedor más compacto */
+    text-align: center;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: transform 0.2s;
+}
+
+.producto:hover {
+    transform: scale(1.05);
+}
+
+.producto img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.producto h3 {
+    font-size: 1rem; /* Ajustar el tamaño del texto si es necesario */
+    margin: 0.5rem 0;
+}
+
+.producto p {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.discount-price {
+    color: #000;
+    font-size: 1.4rem; /* Ajustar tamaño del precio */
+    font-weight: bold;
+}
+
+.add-to-cart {
+    background-color: #3f93ff;
+    color: #fff;
+    padding: 0.5rem 1.2rem; /* Ajustar tamaño del botón */
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #357acb;
+}
+
+
+/* Pie de página */
+footer {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer a {
+    color: #ff5722;
+    text-decoration: none;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner h2 {
+        font-size: 2rem;
+    }
+
+    .producto-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Otros estilos */
+.filtros {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.filter-button {
+    background-color: #ff5722;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-button:hover {
+    background-color: #e64a19;
+}
+
+
+.social-icons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.social-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: gray;
+    font-size: 1em; /* Aumenta el tamaño de texto debajo del ícono */
+}
+
+.social-icon i {
+    font-size: 6em; /* Aumenta el tamaño de los íconos */
+    margin-bottom: 10px; /* Añade un poco de espacio debajo del ícono */
+}
+
+.contact-box {
+    position: relative; /* Permite el posicionamiento absoluto de elementos hijos */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Asegura que los elementos del cuadro sigan en columna */
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    font-size: 1.2em;
+}
+
+.social-title {
+    position: absolute; /* Posiciona el título de forma absoluta */
+    top: 10px; /* Ajusta la distancia desde la parte superior */
+    right: 20px; /* Ajusta la distancia desde la derecha */
+    font-size: 1.3em; /* Tamaño del título */
+    color: #333; /* Color del título */
+    font-weight: bold;
+}
+
+.top-bar {
+    position: fixed;       /* Hace que la barra esté fija en la parte superior */
+    top: 0;                /* Coloca la barra en la parte superior de la pantalla */
+    left: 0;
+    width: 100%;           /* Ocupa todo el ancho de la pantalla */
+    background-color: #0000FF; /* Azul brillante */
+    color: #FFFFFF;
+    text-align: center;
+    padding: 0.5rem 0;
+    font-weight: bold;
+    font-size: 1rem;
+    z-index: 1000;         /* Asegura que esté por encima de otros elementos */
+}
+
+
+.social-icons {
+    position: fixed;
+    bottom: 0;
+    left: 1200px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px; /* Agrega un margen opcional para separar los íconos del borde */
+}
+
+.social-icons .icon {
+    width: 40px;
+    height: 40px;
+    margin: 5px 0;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.icon.instagram {
+    background-image: url('instagram.png'); /* Cambia a la URL de tu ícono */
+}
+
+.icon.facebook {
+    background-image: url('facebook.png'); /* Cambia a la URL de tu ícono */
+}
+
+.icon.whatsapp {
+    background-image: url('whatsapp.png'); /* Cambia a la URL de tu ícono */
+}
+
+.icon.youtube {
+    background-image: url('youtube.png'); /* Cambia a la URL de tu ícono */
+}
+
+.icon.tiktok {
+    background-image: url('tik-tok.png'); /* Cambia a la URL de tu ícono */
+}
+
+.icon.wechat {
+    background-image: url('wechat.png'); /* Cambia a la URL de tu ícono */
+}
+
+.icon:hover {
+    opacity: 0.8;
+}
+
+.mosaic-container {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    width: 80%; /* Ajusta este valor para cambiar el tamaño general del mosaico */
+    max-width: 1000px; /* Tamaño máximo para pantallas grandes */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    padding: 20px; /* Opcional: añade un poco de espacio alrededor */
+}
+
+.mosaic-item {
+    background-color: white;
+    border: 1px solid #b0b0b0; /* Borde color plomo */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.mosaic-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.mosaic-item.large {
+    grid-column: span 2; /* Hace que esta imagen ocupe dos columnas */
+}
+
+.mosaic-item.small {
+    grid-column: span 1;
+    grid-row: span 2; /* Hace que esta imagen ocupe dos filas */
+}
+
+
+.caja-promocion {
+    display: block; /* Cambiar de inline-block a block para ocupar el ancho completo */
+    width: 90%; /* Ajustar al 90% del ancho de la página, puedes modificarlo según prefieras */
+    margin: 0 auto; /* Centrar la caja */
+    padding: 20px 40px; /* Aumentar el relleno para mayor espacio */
+    font-size: 30px; /* Aumentar el tamaño de la fuente */
+    font-weight: bold;
+    background-color: #f8f8f8; /* Color de fondo claro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    color: #333; /* Color del texto */
+  }
+
+  /* Contenedor principal */
+.slider-container {
+    width: 65%;
+    overflow: hidden;
+    position: relative;
+    left: 190px;
+}
+
+/* Configuración de la fila de imágenes */
+.slider {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Tamaño de cada imagen */
+.slide {
+    min-width: 20%; /* Ajusta el tamaño según tus necesidades */
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 10px; /* Redondeado de las esquinas */
+}
+
+  /* Contenedor del carrusel */
+/* Contenedor del carrusel y título */
+.brand-carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 80%; /* Ajusta el ancho total del carrusel */
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Estilo para el texto "MARCAS TOP" */
+.brand-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-right: 20px; /* Separación entre el título y el carrusel */
+    line-height: 1.2;
+}
+
+/* Contenedor del carrusel */
+.brand-carousel-container {
+    display: block; /* Cambiar de inline-block a block para ocupar el ancho completo */
+    width: 90%; /* Ajustar al 90% del ancho de la página, puedes modificarlo según prefieras */
+    margin: 0 auto; /* Centrar la caja */
+    padding: 20px 40px; /* Aumentar el relleno para mayor espacio */
+    font-size: 30px; /* Aumentar el tamaño de la fuente */
+    font-weight: bold;
+    background-color: white; /* Color de fondo claro */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    color: #333; /* Color del texto */
+}
+
+
+
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+/* Contenedor de los logos */
+.brand-carousel {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Estilo para cada logo */
+.brand {
+    min-width: 120px; /* Aumenta el ancho de cada logo */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand img {
+    width: 90px; /* Aumenta el tamaño de los logos */
+    height: auto;
+}
